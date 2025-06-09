@@ -21,7 +21,7 @@ public class PoliciesController : ControllerBase
         return await _context.Policies.ToListAsync();
     }
 
-    //✔ Validates the input before saving.
+    // Validates the input before saving.
     //Adds a new policy to the database.
     //Returns a 201 Created response with the newly added policy.
     [HttpPost]

@@ -1,23 +1,30 @@
 ﻿using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
-public class Claim
+namespace InsuranceAPI.Models
 {
-    [Key]
-    public int ClaimId { get; set; }
+    public class Claim
+    {
+        [Key]
+        public int ClaimId { get; set; }
 
-    [Required]
-    public DateTime DateFiled { get; set; }
+        [Required]
+        [MaxLength(500)]
+        public string Description { get; set; }
 
-    [Required]
-    public decimal Amount { get; set; }
+        [Required]
+        public decimal Amount { get; set; }
 
-    [Required]
-    [MaxLength(20)]
-    public string Status { get; set; } = "Under Review";
+        [Required]
+        [MaxLength(20)]
+        public string Status { get; set; }
 
-    public bool FraudFlag { get; set; } = false;
+        [Required]
+        public DateTime ClaimDate { get; set; }
 
-    // Many Claims can belong to Many Policies (Many-to-Many relationship)
-    public ICollection<Policy> Policies { get; set; } = new List<Policy>();
+        public DateTime? ResolutionDate { get; set; }
+
+        // Many Claims can belong to Many Policies (Many-to-Many relationship)
+        public ICollection<Policy> Policies { get; set; } = new List<Policy>();
+    }
 }

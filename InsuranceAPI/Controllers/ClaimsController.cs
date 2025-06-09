@@ -62,7 +62,7 @@ public class ClaimsController : ControllerBase
         return NoContent(); // 204 Response (successful update)
     }
 
-    //✔ Finds the claim by ID in the database.
+    //Finds the claim by ID in the database.
 // Removes the claim entry from the table.
 // Saves changes and returns a 204 No Content response(successful deletion).
     [HttpDelete("{id}")]

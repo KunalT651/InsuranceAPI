@@ -115,10 +115,10 @@ namespace InsuranceAPI.Migrations
                     b.Property<int>("CustomerId")
                         .HasColumnType("int");
 
-                    b.Property<DateTime>("Date")
+                    b.Property<DateTime>("PaymentDate")
                         .HasColumnType("datetime(6)");
 
-                    b.Property<string>("Status")
+                    b.Property<string>("PaymentStatus")
                         .IsRequired()
                         .HasMaxLength(20)
                         .HasColumnType("varchar(20)");
