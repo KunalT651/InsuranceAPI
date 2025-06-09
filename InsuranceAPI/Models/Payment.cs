@@ -10,11 +10,11 @@ public class Payment
     public decimal Amount { get; set; }
 
     [Required]
-    public DateTime Date { get; set; }
+    public DateTime PaymentDate { get; set; }
 
     [Required]
     [MaxLength(20)]
-    public string Status { get; set; }
+    public string PaymentStatus { get; set; }
 
     // Foreign key - One Customer can have multiple Payments
     public int CustomerId { get; set; }
